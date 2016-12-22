@@ -11,6 +11,6 @@ s.bind(('0.0.0.0', broadcast_port))
 
 while True:
     # Message length is 19 characters, so receive them
-    message, sender = s.recvfrom(68)
+    message, sender = s.recvfrom(255)
     # Print out the message
     print(message)

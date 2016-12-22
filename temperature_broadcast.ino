@@ -4,6 +4,8 @@
 #include <DHT.h>
 #include <ArduinoJson.h>
 
+#define BUFFER_SIZE 128
+
 // Initialize Wi-Fi information; SSID and passphrase
 const char* SSID = "SSID_OF_THE_WIFI_NETWORK";
 const char* passphrase = "PASSPHRASE_OF_THE_WIFI_NETWORK";
@@ -62,7 +64,7 @@ void loop() {
     delay(2000);
 
     // Create JSON message
-    StaticJsonBuffer<120> jsonBuffer;
+    StaticJsonBuffer<BUFFER_SIZE> jsonBuffer;
     JsonObject& json = jsonBuffer.createObject();
     // Read temperature to the JSON object
     json["temperature"] = dht.readTemperature();
@@ -75,7 +77,7 @@ void loop() {
     udp.beginPacket(broadcast_ip, broadcast_port);
 
     // Create a character array to hold JSON message
-    char json_message[68];
+    char json_message[BUFFER_SIZE];
     // "Print" JSON to the character array
     json.printTo(json_message, sizeof(json_message));
     // Set packet content
