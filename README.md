@@ -48,3 +48,17 @@ Setting up the development environment can be done following the manual at the
 * [Adafruit Unified Sensor Driver](https://github.com/adafruit/Adafruit_Sensor)
 * [Adafruit DHT Humidity & Temperature Unified Sensor Library](https://github.com/adafruit/DHT-sensor-library)
 * [ArduinoJson](https://github.com/bblanchon/ArduinoJson)
+
+
+## Notes
+
+
+### Mesh networking vs UDP
+
+This application could very well use the mesh networking capabilities of the ESP2866
+to interract between the devices. By using mesh networking, the devices could
+communicate directly between them, without a need for existing WiFi network.
+
+However, UDP was selected as means of communication to allow listening for messages
+on devices other than Wemos. This allows integration of the devices to a larger
+system, for example a home automation system running on an embedded Linux device.
