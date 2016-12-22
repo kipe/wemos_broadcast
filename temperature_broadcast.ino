@@ -33,13 +33,13 @@ void setup() {
         Serial.print(".");
     }
 
-    // Create wifi broadcast address subnet mask with the gateway IP address
+    // Create wifi broadcast address from subnet mask and the gateway IP address
     //
-    // With subnet mask 255.255.0.0 and gateway IP 10.0.0.1
-    // this becomes 10.0.255.255
+    // With subnet mask 255.255.0.0 and gateway IP 10.0.0.1 this becomes 10.0.255.255
     //
     // https://github.com/esp8266/Arduino/issues/1252#issuecomment-174159835
     broadcast_ip = ~WiFi.subnetMask() | WiFi.gatewayIP();
+    // Set MAC address, used to identify the sending device
     mac_address = WiFi.macAddress();
 
     // Print wifi information to serial port
