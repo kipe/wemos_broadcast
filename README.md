@@ -3,15 +3,16 @@
 This is an example project for [LUT](http://www.lut.fi) course
 [Johdanto sulautettuihin järjestelmiin](http://moodle.lut.fi/course/info.php?id=4044).
 
-
-## Introduction to the idea
-
 The project consists of two main parts:
 
 * an embedded application running on [Wemos D1 mini](https://www.wemos.cc/product/d1-mini.html),
   which broadcasts temperature measurements from [DHT-11 shield](https://www.wemos.cc/product/dht-shield.html)
   to local network with UDP
 * a minimal Python -server to receive the data
+
+![wemos_with_dht](assets/wemos_with_dht.jpg)
+
+## Introduction to the idea
 
 For the third part, the idea is to use the various
 [shields](https://www.wemos.cc/D1-mini-Shields) available for the Wemos D1 to
@@ -42,7 +43,8 @@ The programming language is [Arduino](https://www.arduino.cc/), which is
 Setting up the development environment can be done following the manual at the
 [Wemos website](https://www.wemos.cc/tutorial/get-started-arduino.html).
 
+### Required libraries
 
-## Sources
-
-To be done.
+* [Adafruit Unified Sensor Driver](https://github.com/adafruit/Adafruit_Sensor)
+* [Adafruit DHT Humidity & Temperature Unified Sensor Library](https://github.com/adafruit/DHT-sensor-library)
+* [ArduinoJson](https://github.com/bblanchon/ArduinoJson)
